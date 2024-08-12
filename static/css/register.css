@@ -1,0 +1,76 @@
+/* Linear Gradient Background */
+body {
+    background: linear-gradient(135deg, #f06, #4a90e2);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Center content vertically and horizontally */
+    font-family: Arial, sans-serif;
+}
+
+/* Container Styling */
+.container {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px; /* Set a max-width for the container */
+    width: 100%;
+    text-align: center; /* Center text inside the container */
+}
+
+/* Header Styling */
+h1 {
+    margin-bottom: 20px; /* Space below the heading */
+    font-weight: bold;
+    color: black;
+}
+
+/* Form Label Styling */
+.form-label {
+    font-weight: bold;
+    color: black; /* White color for labels */
+}
+
+/* Form Input Styling */
+input[type="text"],
+input[type="password"] {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(100% - 20px); /* Full width with padding */
+    margin-bottom: 10px; /* Space between inputs */
+}
+
+/* Button Styles */
+button {
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #357ab8; /* Darker shade on hover */
+}
+
+/* Link Styles */
+a {
+    color: #4a90e2; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+p {
+    color: black;
+}

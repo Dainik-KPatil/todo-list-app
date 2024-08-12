@@ -1,0 +1,67 @@
+/* Linear Gradient Background */
+body {
+    background: linear-gradient(135deg, #f06, #4a90e2);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Container Styling */
+.container {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px; /* Set a max-width for the login form */
+    width: 100%;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px; /* Space between inputs */
+}
+
+button {
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #357ab8; /* Darker shade on hover */
+}
+
+/* Link Styling */
+p {
+    text-align: center;
+    color: black;
+    font-weight: 600;
+}

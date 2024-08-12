@@ -1,0 +1,141 @@
+/* Linear Gradient Background */
+body {
+  background: linear-gradient(135deg, #f06, #4a90e2);
+  color: #fff;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+  margin-bottom: 20px; /* Space between navbar and content */
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+/* Container Styling */
+.container {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 1200px; /* Wider container */
+  width: 100%;
+  margin: 0 auto; /* Centering the container */
+}
+
+/* Header Styling */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Form Styling */
+.form-label {
+  font-weight: bold;
+  color: black;
+}
+
+label {
+  color: black;
+  font-weight: bold;
+}
+
+.form-control {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn-primary {
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Todo List Styling */
+.list-group {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 15px; /* Space between items */
+}
+
+.list-group-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+  flex: 1 1 calc(33.33% - 10px); /* Allow 3 items in a row with gap */
+}
+
+.list-group-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333; /* Darker color for headers */
+}
+
+.list-group-item p {
+  margin-bottom: 10px;
+  color: #555; /* Slightly lighter color for paragraphs */
+}
+
+.img-fluid {
+  max-width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px;
+}
+
+/* Button Styles */
+.btn-danger,
+.btn-warning {
+  margin-top: 10px; /* Space above the buttons */
+  padding: 5px 10px; /* Reduced padding for a more compact look */
+  width: 100px; /* Fixed width for consistent button size */
+  text-align: center; /* Center text in buttons */
+  display: inline-block; /* Make buttons inline */
+  margin-right: 10px; /* Margin between buttons */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Bootstrap danger color */
+  color: #fff; /* Text color for delete button */
+  border-radius: 5px;
+}
+
+.btn-warning {
+  background-color: #ffc107; /* Specific color for warning button */
+  color: #fff; /* Text color for button */
+  border-radius: 5px;
+}
+
+/* Reset the margin on the last button */
+.list-group-item .button-group form:last-child .btn-warning {
+  margin-right: 0; /* Remove margin from the last button */
+}
+
+/* Button Hover Effects */
+.btn-outline-primary:hover {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #3a7dc2; /* Darker shade on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .list-group-item {
+    flex: 0 1 100%; /* Full width on small screens */
+  }
+}
