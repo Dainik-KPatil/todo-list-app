@@ -10,7 +10,18 @@ from forms import TodoForm
 from auth import auth
 from sqlalchemy import exc
 
+#1. remove the colour gradient from all tabs and add simple blue and white theme. - done
+#2. make the user todo data on different page. -done
+#3. when user purchase pro license button will be removed.
+#4. removed pro license button from navbar - done - done
+#5. decreased height of nav-bar - done 
+#6. decreased width of todo container - done
+#7. CODE CHANGES (add @login_required to needed function) - done
+#8. add side navbar to add show the todo data. - done
+#9. after i edit and delete redirect to the todo_list page - done
 
+#10. please tell me if i delete or edit todo where should i redirect after db session commit.
+#11. when their is no todo it shows msg and url to go in home tab.
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key',
@@ -66,18 +77,33 @@ def index():
 
     return render_template('index.html', form=form, todos=todos)
 
+@app.route('/todo_list')
+@login_required
+def todo_list():
+    todos = Todo.query.filter_by(user_id=current_user.id).all()
+    return render_template('todo_list.html', todos=todos)
+
+@app.context_processor
+def inject_todos():
+    if current_user.is_authenticated:
+        todos = Todo.query.filter_by(user_id=current_user.id).all()
+    else:
+        todos = []
+    return dict(todos=todos)
+
+
 @app.route('/delete/<int:todo_id>', methods=['POST'])
 @login_required
 def delete_todo(todo_id):
     todo = Todo.query.get_or_404(todo_id)
     if todo.user_id != current_user.id:
         flash("You do not have permission to delete this item.")
-        return redirect(url_for('index'))
+        return redirect(url_for('todo_list'))
     if todo.image:
         os.remove(os.path.join(app.config['UPLOAD_FOLDER'], todo.image))
     db.session.delete(todo)
     db.session.commit()
-    return redirect(url_for('index'))
+    return redirect(url_for('todo_list'))
 
 @app.route('/edit/<int:todo_id>', methods=['GET', 'POST'])
 @login_required
@@ -85,7 +111,7 @@ def edit_todo(todo_id):
     todo = Todo.query.get_or_404(todo_id)
     if todo.user_id != current_user.id:
         flash("You do not have permission to edit this item.")
-        return redirect(url_for('index'))
+        return redirect(url_for('todo_list'))
     
     form = TodoForm(obj=todo)  # Pre-fill the form with the todo data
 
@@ -100,7 +126,7 @@ def edit_todo(todo_id):
             todo.image = filename
 
         db.session.commit()
-        return redirect(url_for('index'))
+        return redirect(url_for('todo_list'))
 
     return render_template('edit_todo.html', form=form, todo=todo)
 
@@ -108,6 +134,7 @@ def edit_todo(todo_id):
 stripe.api_key = app.config['STRIPE_SECRET_KEY']
 
 @app.route('/create-checkout-session', methods=['POST'])
+@login_required
 def create_checkout_session():
     try:
         checkout_session = stripe.checkout.Session.create(
@@ -143,6 +170,7 @@ def payment_success():
 
 
 @app.route('/cancel')
+@login_required
 def cancel():
     return "Payment cancelled."
 

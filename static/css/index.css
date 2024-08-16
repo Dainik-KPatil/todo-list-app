@@ -1,27 +1,60 @@
-/* Linear Gradient Background */
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background: linear-gradient(135deg, #f06, #4a90e2);
-  color: #fff;
+  background-color: #f0f0f0;
+  color: #333;
   min-height: 100vh;
   font-family: Arial, sans-serif;
+  padding-top: 0; /* Remove padding to ensure content starts at the top */
 }
 
 /* Navbar Styling */
 .navbar {
-  margin-bottom: 20px; /* Space between navbar and content */
+  background-color: #4a90e2; /* Solid blue background for the navbar */
+  margin-bottom: 0; /* Remove space between navbar and content */
+  height: 60px; /* Decreased height of navbar */
 }
 
 .navbar-brand {
   font-weight: bold;
+  color: #fff;
+}
+
+.nav-link {
+  color: #fff;
+  font-weight: 600; /* Increase font weight for navbar links */
+}
+
+/* Logout Button Styling */
+form .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  padding: 5px 15px; /* Adjust padding for consistency */
+  font-size: 16px; /* Adjust font size */
+  height: 38px; /* Ensure consistent height with the search button */
+}
+
+/* Search Button Styling */
+form .btn-dark {
+  background-color: #333;
+  border-color: #333;
+  padding: 5px 15px; /* Adjust padding for consistency */
+  font-size: 16px; /* Adjust font size */
+  height: 41px; /* Ensure consistent height with the logout button */
+  margin-top: 2px;
 }
 
 /* Container Styling */
 .container {
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  background-color: #fff; /* White background for the main container */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  max-width: 1200px; /* Wider container */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 1000px; /* Wider container */
   width: 100%;
   margin: 0 auto; /* Centering the container */
 }
@@ -31,24 +64,20 @@ h1 {
   text-align: center;
   margin-bottom: 30px;
   font-weight: bold;
-  color: black;
+  color: #333;
 }
 
 /* Form Styling */
-.form-label {
-  font-weight: bold;
-  color: black;
-}
-
+.form-label,
 label {
-  color: black;
   font-weight: bold;
+  color: #333;
 }
 
 .form-control {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #fff;
   color: #333;
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
 }
@@ -62,80 +91,148 @@ label {
   transition: background-color 0.3s ease;
 }
 
+.edit {
+  margin-left: 10px;
+  background-color: #f7c600;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #357abd;
+}
+
+/* Side Navbar Styling */
+.offcanvas-header,
+.offcanvas-body {
+  background-color: #e3f2fd;
+  color: #333;
+}
+
+.offcanvas-title {
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+.nav-item .nav-link {
+  color: #333;
+  font-weight: 600;
+}
+
 /* Todo List Styling */
 .list-group {
   display: flex; /* Use flexbox for layout */
   flex-wrap: wrap; /* Allow items to wrap to the next line */
-  gap: 15px; /* Space between items */
+  gap: 15px;
 }
 
 .list-group-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
+  flex: 1 1 calc(33.333% - 30px); /* Three columns with space between */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
   padding: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; /* Ensure padding and border are included in width */
-  flex: 1 1 calc(33.33% - 10px); /* Allow 3 items in a row with gap */
+  color: #333;
 }
 
 .list-group-item h2 {
-  font-size: 1.5rem;
+  font-weight: bold;
+  font-size: 18px;
   margin-bottom: 10px;
-  color: #333; /* Darker color for headers */
+  color: #4a90e2; /* Accent color for titles */
 }
 
 .list-group-item p {
+  font-size: 14px;
   margin-bottom: 10px;
-  color: #555; /* Slightly lighter color for paragraphs */
+  color: #666;
 }
 
-.img-fluid {
-  max-width: 100%; /* Make images responsive */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px;
+.list-group-item img {
+  max-width: 100%;
+  margin-bottom: 10px;
 }
 
-/* Button Styles */
-.btn-danger,
-.btn-warning {
-  margin-top: 10px; /* Space above the buttons */
-  padding: 5px 10px; /* Reduced padding for a more compact look */
-  width: 100px; /* Fixed width for consistent button size */
-  text-align: center; /* Center text in buttons */
-  display: inline-block; /* Make buttons inline */
-  margin-right: 10px; /* Margin between buttons */
+/* Footer Styling */
+footer {
+  background-color: #4a90e2;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 }
 
-.btn-danger {
-  background-color: #dc3545; /* Bootstrap danger color */
-  color: #fff; /* Text color for delete button */
-  border-radius: 5px;
-}
-
-.btn-warning {
-  background-color: #ffc107; /* Specific color for warning button */
-  color: #fff; /* Text color for button */
-  border-radius: 5px;
-}
-
-/* Reset the margin on the last button */
-.list-group-item .button-group form:last-child .btn-warning {
-  margin-right: 0; /* Remove margin from the last button */
-}
-
-/* Button Hover Effects */
-.btn-outline-primary:hover {
+/* Modal Styling */
+.modal-header,
+.modal-footer {
   background-color: #4a90e2;
   color: #fff;
 }
 
-.btn-primary:hover {
-  background-color: #3a7dc2; /* Darker shade on hover */
+.modal-title {
+  font-weight: bold;
+}
+
+.modal-body {
+  color: #333;
+}
+
+/* Adjusting Button Spacing and Sizes */
+.btn-close {
+  color: #333;
+}
+
+.ms-3 {
+  margin-left: 1rem !important;
+}
+
+.me-2 {
+  margin-right: 0.5rem !important;
+}
+
+.btn-golden {
+  background-color: #ffd700; /* Golden background */
+  border-color: #ffd700; /* Match the border color */
+  color: #333; /* Dark text for contrast */
+  font-weight: bold;
+}
+
+.btn-golden:hover {
+  background-color: #f7c600; /* Slightly darker golden on hover */
+  border-color: #f7c600;
+  color: #333;
+}
+
+.btn-golden:focus,
+.btn-golden:active {
+  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.5); /* Golden shadow on focus */
 }
 
 /* Responsive Design */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .list-group-item {
-    flex: 0 1 100%; /* Full width on small screens */
+    flex: 1 1 100%; /* Full width on smaller screens */
+  }
+
+  .navbar .container-fluid {
+    flex-direction: column;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  footer {
+    font-size: 14px;
   }
 }
